@@ -7,6 +7,14 @@ editor: visual
 
 ## USArrests Murder Map
 
+The data source is from the built-in R dataset: USArrests.
+
+The map displays the murder rates per 100,000 in each state.
+
+I am trying to communicate the murder rate by state.
+
+I thought murder rates tell more the violence of a state than rapes and assault. I could've shown more information in the map, but I chose to keep it simple. I chose to use the maps library to make this process easier.
+
 ```{r}
 data(USArrests)
 crimes <- data.frame(state=tolower(rownames(USArrests))

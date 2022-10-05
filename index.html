@@ -126,6 +126,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="usarrests-murder-map" class="level2">
 <h2 class="anchored" data-anchor-id="usarrests-murder-map">USArrests Murder Map</h2>
+<p>The data source is from the built-in R dataset: USArrests.</p>
+<p>The map displays the murder rates per 100,000 in each state.</p>
+<p>I am trying to communicate the murder rate by state.</p>
+<p>I thought murder rates tell more the violence of a state than rapes and assault. I could’ve shown more information in the map, but I chose to keep it simple. I chose to use the maps library to make this process easier.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(USArrests)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>crimes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">state=</span><span class="fu">tolower</span>(<span class="fu">rownames</span>(USArrests))</span>
