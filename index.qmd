@@ -5,23 +5,16 @@ format: html
 editor: visual
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## USArrests Murder Map
 
 ```{r}
-1 + 1
+data(USArrests)
+crimes <- data.frame(state=tolower(rownames(USArrests))
+, USArrests)
+library(maps)
+library(ggplot2)
+gg <- ggplot(crimes, aes(map_id=state, fill=Murder))
+gg <- gg + geom_map(map=map_data("state"))
+gg <- gg + expand_limits(x=map_data("state")$long, y=map_data("state")$lat)
+gg+labs(title="Murder rates per 100,000 in 1973", x="longitude", y="latitude")
 ```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
